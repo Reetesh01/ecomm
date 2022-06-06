@@ -11,6 +11,7 @@ from django.db import models
 class Category(models.Model):
 	name = models.CharField(max_length = 300)
 	slug = models.TextField()
+	status = models.CharField(max_length = 50, blank = True, choices = (('active','Active'),('','Default')))
 
 	def __str__(self):
 		return self.name
